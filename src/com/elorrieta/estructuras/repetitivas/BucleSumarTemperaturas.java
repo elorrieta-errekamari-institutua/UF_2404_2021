@@ -21,8 +21,7 @@ public class BucleSumarTemperaturas {
 		Scanner teclado = new Scanner(System.in);
 
 		// BUCLE para pedir temperaturas y sumarlas
-		while (temperatura != SALIR) {
-
+		do {
 			System.out.println("Dime la temperatura (o 888 para salir):");
 			temperatura = teclado.nextFloat();
 
@@ -31,7 +30,7 @@ public class BucleSumarTemperaturas {
 				total += temperatura; // total = total + temperatura;
 				numeroTemperaturas++;
 			}
-		}
+		} while (temperatura != SALIR);
 
 		// mostrar media
 		System.out.println("Media :" + (total / numeroTemperaturas));
