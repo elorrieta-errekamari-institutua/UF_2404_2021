@@ -1,6 +1,6 @@
 package com.elorrieta.estructuras.repetitivas;
 
-public class BucleWhile {
+public class BucleWhileYFor {
 
 	public static void main(String[] args) {
 
