@@ -7,12 +7,14 @@ public class Kapikua {
 	public static void main(String[] args) {
 
 		int numero = 0;
+		int numeroSinModificaR = 0;
 		int inverso = 0;
 		int resto = 0;
 		Scanner teclado = new Scanner(System.in);
 
 		System.out.println("Dime un numero entero");
 		numero = teclado.nextInt();
+		numeroSinModificaR = numero;
 
 		while (numero > 0) {
 
@@ -22,7 +24,7 @@ public class Kapikua {
 		}
 
 		// TODO depurar y solucionar bug
-		if (numero == inverso) {
+		if (numeroSinModificaR == inverso) {
 			System.out.println("Es kapikua");
 		} else {
 			System.out.println("NO Es kapikua");
