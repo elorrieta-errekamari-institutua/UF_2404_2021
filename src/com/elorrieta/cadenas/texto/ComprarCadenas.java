@@ -7,7 +7,7 @@ public class ComprarCadenas {
 		String nombre1 = "Ander";
 		String nombre2 = "ander";
 
-		// NO usar nunca nombre1 == nombre2
+		// NO usar nunca . nombre1 == nombre2
 		if (nombre1.equals(nombre2)) {
 			System.out.println("Los dos nombres son iguales,comparando mayusculas y minusculas");
 		} else {
