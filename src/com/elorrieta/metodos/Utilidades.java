@@ -17,6 +17,11 @@ public class Utilidades {
 		float precio = calcularIva(100f, 21f);
 		System.out.println("El precio con iva es " + precio);
 
+		System.out.println(" 2 + 3 = " + suma(2, 3));
+
+		System.out.println("Es kapikua el numero 2223222 " + isKapikua(2223222));
+		System.out.println("Es kapikua el numero 123 " + isKapikua(123));
+
 	}
 
 	/* vamos a declarar nuevos metodos */
@@ -67,16 +72,34 @@ public class Utilidades {
 	}
 
 	public static int suma(int num1, int num2) {
-		return 0;
+		return num1 + num2;
 	}
 
 	public static int numeroMayor(int num1, int num2, int num3) {
-		return 0;
+		if (num1 > num2 && num1 > num3) {
+			return num1;
+		} else if (num2 > num3) {
+			return num2;
+		} else {
+			return num3;
+		}
 	}
 
 	public static boolean isKapikua(int numero) {
-		// TODO cambiar el retorno y hacer algoritmo
-		return false;
-	}
+
+		int numeroSinModificaR = numero;
+		int inverso = 0;
+		int resto = 0;
+
+		while (numero > 0) {
+
+			resto = numero % 10;
+			inverso = inverso * 10 + resto;
+			numero = numero / 10;
+		}
+
+		return numeroSinModificaR == inverso;
+
+	}// isKapikua
 
 }
