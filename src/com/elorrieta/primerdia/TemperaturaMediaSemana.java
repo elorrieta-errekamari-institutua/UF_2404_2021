@@ -59,6 +59,7 @@ public class TemperaturaMediaSemana {
 		// mosrtrar media
 		System.out.println("La media es " + media);
 
+		teclado.close();
 	}
 
 }

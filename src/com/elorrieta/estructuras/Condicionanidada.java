@@ -39,6 +39,8 @@ public class Condicionanidada {
 
 		} // 1º condicion
 
+		teclado.close();
+
 	}// main
 
 }
