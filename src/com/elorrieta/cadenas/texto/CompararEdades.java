@@ -28,9 +28,22 @@ public class CompararEdades {
 		nombre2 = teclado.nextLine();
 
 		System.out.println("Edad 2º persona");
-		edad2 = teclado.nextLine();
+		edad2 = Integer.parseInt(teclado.nextLine());
 
-		// TODO mostrar la persona mas alta de las dos
+		System.out.println("Dime tu altura en metros, por ejemplo 1,70");
+		altura2 = Float.parseFloat(teclado.nextLine());
+
+		if (edad1 > edad2) {
+			System.out.println(nombre1 + " es mas viejuno");
+		} else {
+			System.out.println(nombre2 + " es mas viejuno");
+		}
+
+		if (altura1 > altura2) {
+			System.out.println(nombre1 + " es mas alto");
+		} else {
+			System.out.println(nombre2 + " es mas alto");
+		}
 
 		teclado.close();
 	}
