@@ -55,20 +55,28 @@ public class CrearObejtosPokemon {
 		Scanner sc = new Scanner(System.in);
 
 		// Pedir datos por consola
-		System.out.println("Dime el nombre:");
-		String nombre = sc.nextLine();
+		String nombre = "";
+		do {
+			System.out.println("Dime el nombre (minimo 3 letras):");
+			nombre = sc.nextLine();
+		} while (nombre.length() < 3);
 
 		System.out.println("Dime el precio en euros:");
 		float precio = Float.parseFloat(sc.nextLine());
 
-		System.out.println("Numero del pokemon:");
-		int numero = Integer.parseInt(sc.nextLine());
+		// vamos hacer un bucle do-while
+		int numero = 0;
+		do {
+			System.out.println("Numero del pokemon ( debe ser mayor que cero ):");
+			numero = Integer.parseInt(sc.nextLine());
+
+		} while (numero <= 0);
 
 		System.out.println("¿ Es Brillante la carta?  escribe S o N");
 		String respuesta = sc.nextLine();
 		// boolean isBrillante = ("s".equalsIgnoreCase(sc.nextLine())) ? true : false;
 		boolean isBrillante = false;
-		if ("s".equalsIgnoreCase(respuesta)) {
+		if ("s".equalsIgnoreCase(respuesta) || "si".equalsIgnoreCase(respuesta)) {
 			isBrillante = true;
 		}
 
