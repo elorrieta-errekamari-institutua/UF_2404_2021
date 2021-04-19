@@ -1,5 +1,7 @@
 package com.elorrieta.objetos;
 
+import java.util.Scanner;
+
 public class CrearObejtosPokemon {
 
 	public static void main(String[] args) {
@@ -40,7 +42,51 @@ public class CrearObejtosPokemon {
 
 		// bulbasur
 
-		Pokemon objeto3 = new Pokemon();
+		Pokemon p3 = new Pokemon("Bulbasur", 10);
+		p3.setNumero(3);
+		p3.setBrillante(false);
+		System.out.println("----------------------------------------");
+		System.out.println(p3); // no es necesario llamar al metodo .toString()
+
+		System.out.println("----------------------------------------");
+		System.out.println("---- Crea tu Pokemon a tu gusto --------");
+		System.out.println("----------------------------------------");
+
+		Scanner sc = new Scanner(System.in);
+
+		// Pedir datos por consola
+		System.out.println("Dime el nombre:");
+		String nombre = sc.nextLine();
+
+		System.out.println("Dime el precio en euros:");
+		float precio = Float.parseFloat(sc.nextLine());
+
+		System.out.println("Numero del pokemon:");
+		int numero = Integer.parseInt(sc.nextLine());
+
+		System.out.println("¿ Es Brillante la carta?  escribe S o N");
+		String respuesta = sc.nextLine();
+		// boolean isBrillante = ("s".equalsIgnoreCase(sc.nextLine())) ? true : false;
+		boolean isBrillante = false;
+		if ("s".equalsIgnoreCase(respuesta)) {
+			isBrillante = true;
+		}
+
+		// crear el pokemon
+		Pokemon pCustom = new Pokemon();
+		pCustom.setNombre(nombre);
+		pCustom.setPrecio(precio);
+		pCustom.setNumero(numero);
+		pCustom.setBrillante(isBrillante);
+
+		// mostrar por pantalla
+		System.out.println("Ya tienes tu nuevo Pokemon customizado");
+		System.out.println(pCustom);
+		if (pCustom.isBrillante()) {
+			System.out.println("Como es brillante el precio es " + pCustom.getPrecio());
+		}
+
+		sc.close();
 
 	}
 

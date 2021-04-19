@@ -17,8 +17,14 @@ public class Pokemon {
 		this.isBrillante = false;
 	}
 
+	public Pokemon(String nombre, float precio) {
+		this(); // CUIDADO, cambiar super por this
+		this.nombre = nombre;
+		this.precio = precio;
+	}
+
 	public Pokemon(String nombre) {
-		super();
+		this(); // llamamos al constructor vacio
 		this.nombre = nombre;
 	}
 
@@ -31,11 +37,11 @@ public class Pokemon {
 	}
 
 	public float getPrecio() {
-		return precio;
+		return (isBrillante) ? (precio + 20) : precio;
 	}
 
 	public void setPrecio(float precio) {
-		this.precio = precio;
+		this.precio = (precio >= 0) ? precio : 0;
 	}
 
 	public int getNumero() {
@@ -52,6 +58,12 @@ public class Pokemon {
 
 	public void setBrillante(boolean isBrillante) {
 		this.isBrillante = isBrillante;
+	}
+
+	@Override
+	public String toString() {
+		return "Pokemon [nombre=" + nombre + ", precio=" + getPrecio() + ", numero=" + numero + ", isBrillante="
+				+ isBrillante + "]";
 	}
 
 }
