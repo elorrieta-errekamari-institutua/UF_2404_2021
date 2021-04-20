@@ -40,8 +40,17 @@ public class Pokemon {
 		return (isBrillante) ? (precio + 20) : precio;
 	}
 
-	public void setPrecio(float precio) {
-		this.precio = (precio >= 0) ? precio : 0;
+	/**
+	 * Setea el precio
+	 * 
+	 * @param precio float en euros
+	 * @throws Exception si el precio < 0
+	 */
+	public void setPrecio(float precio) throws Exception {
+		if (precio < 0) {
+			throw new Exception("El precio debe ser 0 o superior");
+		}
+		this.precio = precio;
 	}
 
 	public int getNumero() {
