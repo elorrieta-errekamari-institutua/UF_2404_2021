@@ -6,9 +6,10 @@ public class CrearObejtosPokemon {
 
 	public static void main(String[] args) {
 
-		// TODO crear toString en Pokemon
-		// TODO crear la segunda cancion y mostrar por pantalla uno a uno los campos
-		// TODO crear un pokemon, pero pedir los datos por pantalla con Scanner
+		// variables para leer datos por pantalla y crear un Pokemon
+		float precio = 0;
+		String nombre = "";
+		int numero = 0;
 
 		// vamos a crear objetos o instancias
 
@@ -55,20 +56,36 @@ public class CrearObejtosPokemon {
 		Scanner sc = new Scanner(System.in);
 
 		// Pedir datos por consola
-		String nombre = "";
+
 		do {
 			System.out.println("Dime el nombre (minimo 3 letras):");
 			nombre = sc.nextLine();
 		} while (nombre.length() < 3);
 
 		System.out.println("Dime el precio en euros:");
-		float precio = Float.parseFloat(sc.nextLine());
+		do {
+			try {
+				precio = Float.parseFloat(sc.nextLine());
+			} catch (Exception e) {
+				System.out.println("formato incorrecto, por favor prueba de nuevo");
+			}
+		} while (precio <= 0);
 
 		// vamos hacer un bucle do-while
-		int numero = 0;
+
+		int cont = 0;
 		do {
 			System.out.println("Numero del pokemon ( debe ser mayor que cero ):");
-			numero = Integer.parseInt(sc.nextLine());
+			try {
+				numero = Integer.parseInt(sc.nextLine());
+			} catch (Exception e) {
+				if (cont < 3) {
+					System.out.println("formato incorrecto, escribe un numero");
+				} else {
+					System.out.println("ATENCION borrico has metido mal ya " + cont + " veces!!!!");
+				}
+				cont++;
+			}
 
 		} while (numero <= 0);
 
