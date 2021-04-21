@@ -7,8 +7,8 @@ public class ListaPaises {
 	public static void main(String[] args) {
 
 		ArrayList<String> paises = new ArrayList<String>();
-		paises.add("Egpaña");
-		paises.add("Euskal Herria");
+		paises.add("Egpa");
+		paises.add("Euskal Herria2");
 		paises.add("Euskal Herria");
 		paises.add("Burkina Faso");
 		paises.add("Andorra");
@@ -35,6 +35,18 @@ public class ListaPaises {
 		}
 
 		// contar cuantas veces esta el pais "X"
+		String paisBuscar = "Euskal Herria";
+		int cont = 0;
+		for (int indice = 0; indice < paises.size(); indice++) {
+			String paisIteracion = paises.get(indice);
+			if (paisBuscar.equalsIgnoreCase(paisIteracion)) {
+				cont++;
+			}
+		}
+		System.out.println("El pais " + paisBuscar + " esta " + cont + " veces");
+
+		// contar paises con mas de 5 caracteres
+		System.out.println("Andorra tiene " + "Andorra".length() + " carcateres");
 
 		System.out.println("Terminamos");
 
