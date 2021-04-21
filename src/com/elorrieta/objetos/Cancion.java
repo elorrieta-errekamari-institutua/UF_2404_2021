@@ -3,6 +3,7 @@ package com.elorrieta.objetos;
 public class Cancion {
 
 	public static final int DURACION_MAXIMA = 400;
+	public static final int DURACION_MIN = 0;
 
 	// atributos
 	private String nombre;
@@ -43,8 +44,8 @@ public class Cancion {
 	 * @throws Exception si la duracion > DURACION_MAXIMA
 	 */
 	public void setDuracion(int duracion) throws Exception {
-		if (duracion >= DURACION_MAXIMA) {
-			throw new Exception("La duracion no puede ser mayor que " + DURACION_MAXIMA);
+		if (duracion >= DURACION_MAXIMA || duracion < DURACION_MIN) {
+			throw new Exception("La duracion de ser entre " + DURACION_MIN + " y " + DURACION_MAXIMA);
 		}
 		this.duracion = duracion;
 	}
