@@ -46,7 +46,16 @@ public class ListaPaises {
 		System.out.println("El pais " + paisBuscar + " esta " + cont + " veces");
 
 		// contar paises con mas de 5 caracteres
-		System.out.println("Andorra tiene " + "Andorra".length() + " carcateres");
+		System.out.println("Paises con mas de 5 caracteres");
+		cont = 0;
+		for (int i = 0; i < paises.size(); i++) {
+			String paisIteracion = paises.get(i);
+			if (paisIteracion.length() > 5) {
+				System.out.println(paisIteracion);
+				cont++;
+			}
+		}
+		System.out.println("Total " + cont);
 
 		System.out.println("Terminamos");
 
