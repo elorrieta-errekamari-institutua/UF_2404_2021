@@ -21,6 +21,8 @@ public class TemperaturaMedia {
 		final int SALIR = 888;
 		Scanner sc = new Scanner(System.in);
 
+		int[] tempera = new int[6];
+
 		do {
 			System.out.println("Dime la temperatura: ( escribe 888 para salir)");
 			temp = Integer.parseInt(sc.nextLine());
