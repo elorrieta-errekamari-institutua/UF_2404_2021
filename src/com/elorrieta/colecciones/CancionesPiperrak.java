@@ -9,9 +9,9 @@ public class CancionesPiperrak {
 	public static void main(String[] args) throws Exception {
 
 		int totalSegundos = 0;
-		int mediaSegundos = 0;
 		Cancion cMasLarga = new Cancion();
 		Cancion cMasCorta = new Cancion();
+		cMasCorta.setDuracion(Cancion.DURACION_MAXIMA);
 
 		ArrayList<Cancion> canciones = new ArrayList<Cancion>();
 
@@ -44,7 +44,6 @@ public class CancionesPiperrak {
 				cMasLarga = cancion;
 			}
 
-			// BUG cuidado duracion 0 nunca se va a actualizar
 			if (duracionMasCorta > duracionActual) {
 				cMasCorta = cancion;
 			}
@@ -53,8 +52,10 @@ public class CancionesPiperrak {
 
 		System.out.println("Total segundos: " + totalSegundos);
 		System.out.println("Media segundos: " + totalSegundos / canciones.size());
-		System.out.println("Cancion mas Larga: " + cMasLarga.getNombre() + " " + cMasLarga.getDuracion() + " seg");
-		System.out.println("Cancion mas Corta: " + cMasCorta.getNombre() + " " + cMasCorta.getDuracion() + " seg");
+		System.out.println(
+				"Cancion mas Larga: " + cMasLarga.getNombre() + " " + cMasLarga.getDuracionFormateada() + " seg");
+		System.out.println(
+				"Cancion mas Corta: " + cMasCorta.getNombre() + " " + cMasCorta.getDuracionFormateada() + " seg");
 
 	}
 
