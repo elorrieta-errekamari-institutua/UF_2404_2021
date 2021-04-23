@@ -19,8 +19,8 @@ public class Ejemplo {
 
 			statement.executeUpdate("drop table if exists person");
 			statement.executeUpdate("create table person (id integer, name string)");
-			statement.executeUpdate("insert into person values(1, 'leo')");
-			statement.executeUpdate("insert into person values(2, 'yui')");
+			statement.executeUpdate("insert into person values(1, 'Ander')");
+			statement.executeUpdate("insert into person values(2, 'Pepe')");
 			ResultSet rs = statement.executeQuery("select * from person");
 			while (rs.next()) {
 				// read the result set
