@@ -18,7 +18,8 @@ public class Ejemplo {
 			statement.setQueryTimeout(30); // set timeout to 30 sec.
 
 			statement.executeUpdate("drop table if exists person");
-			statement.executeUpdate("create table person (id integer, name string)");
+			statement.executeUpdate("CREATE TABLE \"person\" ( " + "	\"id\"	INTEGER, " + "	\"name\"	string, "
+					+ "	PRIMARY KEY(\"id\" AUTOINCREMENT) " + ");");
 			statement.executeUpdate("insert into person values(1, 'Ander')");
 			statement.executeUpdate("insert into person values(2, 'Pepe')");
 			ResultSet rs = statement.executeQuery("select * from person");

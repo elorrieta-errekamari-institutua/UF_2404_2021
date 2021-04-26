@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class ModificarPersona {
 
@@ -11,20 +12,27 @@ public class ModificarPersona {
 
 		String sql = "UPDATE person SET name = ? WHERE id = ? ;";
 
-		try (Connection con = DriverManager.getConnection("jdbc:sqlite:sample.db");
+		try (Scanner sc = new Scanner(System.in);
+				Connection con = DriverManager.getConnection("jdbc:sqlite:sample.db");
 				PreparedStatement pst = con.prepareStatement(sql)) {
 
-			// TODO pedir datos por consola
+			// pedir datos por consola
+			System.out.println("Dime el ID para modificar una persona:");
+			int id = Integer.parseInt(sc.nextLine());
 
-			int id = 35;
-			String nombre = "Manolo";
+			System.out.println("Dime el nombre nuevo:");
+			String nombre = sc.nextLine();
 
 			// sustituimos las '?' de la SQL por las variables
 			pst.setString(1, nombre);
 			pst.setInt(2, id);
 
 			int filas = pst.executeUpdate(); // ejecuta la SQL contra la bbdd que nos hemos conectado
-			System.out.println("Hemos modificado " + filas + " filas");
+			if (filas == 1) {
+				System.out.println("Persona modificada");
+			} else {
+				System.out.println("Persona NO modificada");
+			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
