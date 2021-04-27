@@ -6,7 +6,7 @@ public class Pokemon {
 	private int id;
 	private String nombre;
 	private float precio;
-	private int numero;
+	private String numero;
 	private boolean isBrillante;
 
 	// constructor
@@ -15,7 +15,7 @@ public class Pokemon {
 		this.id = 0;
 		this.nombre = "sin nombre";
 		this.precio = 0;
-		this.numero = 0;
+		this.numero = "";
 		this.isBrillante = false;
 	}
 
@@ -70,20 +70,20 @@ public class Pokemon {
 		this.precio = precio;
 	}
 
-	public int getNumero() {
-		return numero;
-	}
-
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-
 	public boolean isBrillante() {
 		return isBrillante;
 	}
 
 	public void setBrillante(boolean isBrillante) {
 		this.isBrillante = isBrillante;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package com.elorrieta.cadenas.basedatos;
+package com.elorrieta.basedatos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,32 +6,28 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class ModificarPersona {
+public class EliminarPersona {
 
 	public static void main(String[] args) {
 
-		String sql = "UPDATE person SET name = ? WHERE id = ? ;";
+		String sql = "DELETE FROM person WHERE id = ? ;";
 
 		try (Scanner sc = new Scanner(System.in);
 				Connection con = DriverManager.getConnection("jdbc:sqlite:sample.db");
 				PreparedStatement pst = con.prepareStatement(sql)) {
 
 			// pedir datos por consola
-			System.out.println("Dime el ID para modificar una persona:");
+			System.out.println("Dime el ID para eliminar una persona:");
 			int id = Integer.parseInt(sc.nextLine());
 
-			System.out.println("Dime el nombre nuevo:");
-			String nombre = sc.nextLine();
-
 			// sustituimos las '?' de la SQL por las variables
-			pst.setString(1, nombre);
-			pst.setInt(2, id);
+			pst.setInt(1, id);
 
 			int filas = pst.executeUpdate(); // ejecuta la SQL contra la bbdd que nos hemos conectado
 			if (filas == 1) {
-				System.out.println("Persona modificada");
+				System.out.println("Hemos eliminado " + filas + " filas");
 			} else {
-				System.out.println("Persona NO modificada");
+				System.out.println("Persona no encontrada");
 			}
 
 		} catch (SQLException e) {

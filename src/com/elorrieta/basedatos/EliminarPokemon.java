@@ -1,4 +1,4 @@
-package com.elorrieta.cadenas.basedatos;
+package com.elorrieta.basedatos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,18 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class EliminarPersona {
+public class EliminarPokemon {
 
 	public static void main(String[] args) {
 
-		String sql = "DELETE FROM person WHERE id = ? ;";
+		String sql = "DELETE FROM pokemon WHERE id = ? ;";
 
 		try (Scanner sc = new Scanner(System.in);
-				Connection con = DriverManager.getConnection("jdbc:sqlite:sample.db");
+				Connection con = DriverManager.getConnection("jdbc:sqlite:pokemon.db");
 				PreparedStatement pst = con.prepareStatement(sql)) {
 
 			// pedir datos por consola
-			System.out.println("Dime el ID para eliminar una persona:");
+			System.out.println("Dime el ID para eliminar un pokemon:");
 			int id = Integer.parseInt(sc.nextLine());
 
 			// sustituimos las '?' de la SQL por las variables
@@ -27,7 +27,7 @@ public class EliminarPersona {
 			if (filas == 1) {
 				System.out.println("Hemos eliminado " + filas + " filas");
 			} else {
-				System.out.println("Persona no encontrada");
+				System.out.println("Pokemon no encontrada");
 			}
 
 		} catch (SQLException e) {

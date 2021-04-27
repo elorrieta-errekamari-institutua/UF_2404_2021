@@ -1,4 +1,4 @@
-package com.elorrieta.cadenas.basedatos;
+package com.elorrieta.basedatos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
