@@ -1,6 +1,6 @@
 package com.elorrieta.objetos;
 
-public class Pokemon implements Cantarin {
+public class Pokemon implements Cantarin, Jugable {
 
 	// atributos
 	private int id;
@@ -8,6 +8,7 @@ public class Pokemon implements Cantarin {
 	private float precio;
 	private String numero;
 	private boolean isBrillante;
+	private int vida;
 
 	// constructor
 	public Pokemon() {
@@ -17,6 +18,15 @@ public class Pokemon implements Cantarin {
 		this.precio = 0;
 		this.numero = "";
 		this.isBrillante = false;
+		this.vida = 0;
+	}
+
+	public int getVida() {
+		return vida;
+	}
+
+	public void setVida(int vida) {
+		this.vida = vida;
 	}
 
 	public Pokemon(String nombre, float precio) {
@@ -89,12 +99,34 @@ public class Pokemon implements Cantarin {
 	@Override
 	public String toString() {
 		return "Pokemon [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", numero=" + numero
-				+ ", isBrillante=" + isBrillante + "]";
+				+ ", isBrillante=" + isBrillante + ", vida=" + vida + "]";
 	}
 
 	@Override
 	public void cantar() {
 		System.out.println("soy un poquemos y estoy cantando");
+	}
+
+	/**
+	 * genera un numero aletorio entre 1 y 5
+	 */
+	@Override
+	public int atacar() {
+		int min = 1;
+		int max = 5;
+		int numero = (int) Math.floor(Math.random() * (max - min + 1) + min);
+		return numero;
+	}
+
+	@Override
+	public int vida(int ataque) {
+		this.vida -= ataque;
+		return vida;
+	}
+
+	@Override
+	public String nombreYvida() {
+		return "[" + vida + "]" + getNombre();
 	}
 
 }
