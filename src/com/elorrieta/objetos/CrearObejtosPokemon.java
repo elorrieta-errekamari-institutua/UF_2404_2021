@@ -26,7 +26,7 @@ public class CrearObejtosPokemon {
 			p1.setNombre("Pikatxu");
 			p1.setPrecio(-20);
 			p1.setBrillante(true);
-			p1.setNumero(0);
+			// p1.setNumero(0);
 
 			System.out.println("nombre: " + p1.getNombre());
 			System.out.println("precio: " + p1.getPrecio());
@@ -36,7 +36,7 @@ public class CrearObejtosPokemon {
 			// charmander
 			Pokemon p2 = new Pokemon("charmander");
 			p2.setBrillante(false);
-			p2.setNumero(2);
+			// p2.setNumero(2);
 			p2.setPrecio(600);
 
 			System.out.println("----------------------------------------");
@@ -45,7 +45,7 @@ public class CrearObejtosPokemon {
 			// bulbasur
 
 			Pokemon p3 = new Pokemon("Bulbasur", 10);
-			p3.setNumero(3);
+			// p3.setNumero(3);
 			p3.setBrillante(false);
 			System.out.println("----------------------------------------");
 			System.out.println(p3); // no es necesario llamar al metodo .toString()
@@ -102,7 +102,7 @@ public class CrearObejtosPokemon {
 			Pokemon pCustom = new Pokemon();
 			pCustom.setNombre(nombre);
 			pCustom.setPrecio(precio);
-			pCustom.setNumero(numero);
+			// pCustom.setNumero(numero);
 			pCustom.setBrillante(isBrillante);
 
 			// mostrar por pantalla
