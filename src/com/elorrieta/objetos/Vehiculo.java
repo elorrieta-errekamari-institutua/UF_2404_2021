@@ -9,7 +9,7 @@ public class Vehiculo {
 
 	public Vehiculo() {
 		super();
-		System.out.println("constructor por defecto");
+		// System.out.println("constructor por defecto");
 		this.matricula = "";
 		this.color = "blanco";
 		this.asientos = 1;
@@ -18,7 +18,7 @@ public class Vehiculo {
 
 	public Vehiculo(String _matricula) {
 		this();
-		System.out.println("constructor con matricula");
+		// System.out.println("constructor con matricula");
 		/*
 		 * this() hace todas esta lineas super(); this.matricula = ""; this.color =
 		 * "blanco"; this.asientos = 1; this.ruedas = 2;
@@ -30,7 +30,7 @@ public class Vehiculo {
 		// this();
 		// this.matricula = _matricula;
 		this(_matricula);
-		System.out.println("constructor con matricula y color");
+		// System.out.println("constructor con matricula y color");
 		this.color = _color;
 
 	}
