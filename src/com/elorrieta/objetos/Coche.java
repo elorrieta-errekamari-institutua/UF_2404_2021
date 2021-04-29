@@ -20,6 +20,12 @@ public class Coche extends Vehiculo {
 	}
 
 	@Override
+	public void arrancar() {
+		System.out.println("Brum brum brmu");
+
+	}
+
+	@Override
 	public String toString() {
 		return "Coche [isItv()=" + isItv() + ", getMatricula()=" + getMatricula() + ", getColor()=" + getColor()
 				+ ", getAsientos()=" + getAsientos() + ", getRuedas()=" + getRuedas() + "]";

@@ -6,6 +6,8 @@ public class VehiculosApp {
 
 		System.out.println("------------- v1 -----------------");
 		Vehiculo v1 = new Vehiculo();
+		v1.arrancar();
+		v1.parar();
 		v1.setMatricula("2222 GPL");
 
 		System.out.println("------------- v2 -----------------");
@@ -28,6 +30,9 @@ public class VehiculosApp {
 		cg1.setColor("rojo");
 		cg1.setAsientos(2);
 		cg1.setCombustible(CocheGasolina.COMBUSTIBLE_BIO);
+
+		cg1.arrancar();
+		cg1.parar();
 
 		System.out.println(cg1.toString());
 

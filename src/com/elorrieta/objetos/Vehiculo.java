@@ -1,6 +1,6 @@
 package com.elorrieta.objetos;
 
-public class Vehiculo {
+public class Vehiculo implements IArracable {
 
 	private String matricula;
 	private String color;
@@ -71,6 +71,18 @@ public class Vehiculo {
 	public String toString() {
 		return "Vehiculo [matricula=" + matricula + ", color=" + color + ", asientos=" + asientos + ", ruedas=" + ruedas
 				+ "]";
+	}
+
+	@Override
+	public void arrancar() {
+		System.out.println("Vehiculo arrancado");
+
+	}
+
+	@Override
+	public void parar() {
+		System.out.println("Vehiculo parado");
+
 	}
 
 }
