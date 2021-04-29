@@ -7,6 +7,8 @@ public class Coche extends Vehiculo {
 	public Coche() {
 		super();
 		this.itv = false;
+		setRuedas(4);
+		// ruedas = 4;
 	}
 
 	public boolean isItv() {
@@ -19,7 +21,8 @@ public class Coche extends Vehiculo {
 
 	@Override
 	public String toString() {
-		return "Coche [itv=" + itv + "]";
+		return "Coche [isItv()=" + isItv() + ", getMatricula()=" + getMatricula() + ", getColor()=" + getColor()
+				+ ", getAsientos()=" + getAsientos() + ", getRuedas()=" + getRuedas() + "]";
 	}
 
 }

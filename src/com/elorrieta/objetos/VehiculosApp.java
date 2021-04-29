@@ -17,6 +17,20 @@ public class VehiculosApp {
 
 		System.out.println(v3);
 
+		Coche c1 = new Coche();
+		c1.isItv(); // su propio metodo
+		c1.getMatricula(); // metodo heredado del padre
+		c1.toString(); // metodo sobreescrito al padre
+
+		CocheGasolina cg1 = new CocheGasolina();
+		cg1.setCilindrada(2500);
+		cg1.setItv(true);
+		cg1.setColor("rojo");
+		cg1.setAsientos(2);
+		cg1.setCombustible(CocheGasolina.COMBUSTIBLE_BIO);
+
+		System.out.println(cg1.toString());
+
 	}
 
 }

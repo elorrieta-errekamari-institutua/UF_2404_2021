@@ -11,7 +11,7 @@ public interface Jugable {
 
 	/**
 	 * @param ataque int la vida que le quitan
-	 * @return puntos de vida que le quedan, si < 0 estas muerto
+	 * @return puntos de vida que le quedan, si <= 0 estas muerto
 	 */
 	int vida(int ataque);
 
