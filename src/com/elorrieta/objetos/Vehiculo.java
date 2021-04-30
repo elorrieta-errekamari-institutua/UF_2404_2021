@@ -35,6 +35,14 @@ public class Vehiculo implements IArracable {
 
 	}
 
+	public Vehiculo(String matricula, String color, int asientos, int ruedas) {
+		this();
+		this.matricula = matricula;
+		this.color = color;
+		this.asientos = asientos;
+		this.ruedas = ruedas;
+	}
+
 	public String getMatricula() {
 		return matricula;
 	}
