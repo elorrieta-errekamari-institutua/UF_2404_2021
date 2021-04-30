@@ -78,8 +78,6 @@ public class MenuConcesionarioHashMap {
 
 	private static void modificar() {
 
-		boolean encontrado = false;
-
 		System.out.println("Modificar");
 		System.out.println("-----------------------------");
 		System.out.println("Dime la Matricula:");
