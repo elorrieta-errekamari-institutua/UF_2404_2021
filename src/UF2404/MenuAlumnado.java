@@ -52,8 +52,9 @@ public class MenuAlumnado {
 	private static void darDeAlta() {
 
 		int edad = 16;
-		int notaMedia = 0;
 		boolean isEnfermo = false;
+		boolean error = true;
+		String repetir = "";
 		Alumno a = new Alumno();
 
 		System.out.println("Por favor introduzca los datos:");
@@ -81,22 +82,6 @@ public class MenuAlumnado {
 			}
 		} while (edad <= 3);
 
-		// Preguntar por Asginaturas
-		// TODO hacer bucle para pedir mas de una Asignatura
-		// TODO gestionar Excepciones de parseo
-
-		System.out.println("Asignaturas en las que esta matriculado");
-		System.out.println("---------------------------------------");
-
-		System.out.println("Dime el nombre:");
-		String nomAsig = sc.nextLine();
-
-		System.out.println("Dime la nota [0-10]:");
-		float nota = Float.parseFloat(sc.nextLine());
-
-		Asignatura asigMatriculado = new Asignatura(nomAsig, nota);
-		a.setAsignatura(asigMatriculado);
-
 		// Enfermo
 		System.out.println("Digame si esta enfermo (escriba si o no)");
 		String respuesta = sc.nextLine();
@@ -105,6 +90,42 @@ public class MenuAlumnado {
 
 		}
 		a.setEnfermo(isEnfermo);
+
+		// Preguntar por Asignaturas
+		System.out.println("Asignaturas en las que esta matriculado");
+		System.out.println("---------------------------------------");
+
+		do {
+			Asignatura asigNueva = new Asignatura();
+
+			// Nombre Asigntura
+			System.out.println("Dime el nombre:");
+			String nomAsig = sc.nextLine();
+			asigNueva.setNombre(nomAsig);
+
+			// Nota Asigantura
+			error = true;
+			do {
+				try {
+					System.out.println("Dime la nota [0-10]:");
+					float nota = Float.parseFloat(sc.nextLine());
+					asigNueva.setNota(nota);
+					error = false;
+				} catch (AsignaturaException e) {
+					System.out.println(e.getMessage());
+
+				} catch (Exception e) {
+					System.out.println("Nota incorrecta, por favor usa numeros");
+				}
+			} while (error);
+
+			// Guardar Asigntura en el Alumno
+			a.setAsignatura(asigNueva);
+
+			System.out.println("¿ Quieres añadir una nueva Asignatura ? Si o No");
+			repetir = sc.nextLine();
+
+		} while ("si".equalsIgnoreCase(repetir) || "s".equalsIgnoreCase(repetir));
 
 		// añadirlo en la coleccion 'stock'
 		clase.add(a);
